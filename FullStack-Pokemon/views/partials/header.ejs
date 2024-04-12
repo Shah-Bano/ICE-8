@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="styleSheet" href="/public/css/style.css">
-    <title>Pokemon collector</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pokemon Collector</title>
 </head>
 <body>
 <nav>
-    <ul>
-        <li><a href="/views/mySavedCollection.ejs"> My saved collection</a></li>
-        <li><a href="/views/homePage.ejs"> Home page</a></li>
-    </ul>
-</nav>
+<ul class="navbar">
+    <% if (user) { %>
+
+    <li>Welcome <%= user.firstName %></li>
+    <li><a href="/">Home Page</a></li>
+    <li><a href="/savedCollection">My Saved Collection</a></li>
+    <li><a href="/editPokemon/<%= pokemon.id %>">Edit Pokemon</a></li>
+    <% } else { %>
+    <li><a href="/signUp">Sign Up</a></li>
+    <% } %>
+</ul>
+</nav>    

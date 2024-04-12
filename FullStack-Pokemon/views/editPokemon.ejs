@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<div> 
+    <a href="/">Go Back</a>
+    <h2>Edit Pokemon</h2>
+    <form action="/updatePokemon/<%= pokemon.id %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= pokemon.name %>">
+        <br>
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" value="<%= pokemon.height %>">
+        <br>
+
+        <input type="submit" value="Update Pokemon">
+    </form>
+</div>
+
